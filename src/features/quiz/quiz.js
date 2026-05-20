@@ -92,6 +92,7 @@ let questions = createQuestions();
 /*---------------------------------------------------------------*/
 
 
+
 function loadQuestion() {
   answersEl.innerHTML = "";
 
@@ -207,6 +208,9 @@ function showResult() {
   scoreEl.textContent = `Você acertou ${score} de ${questions.length}`;
 }
 
+// Listener em button restart para chamar a funcao restarquiz
+document.getElementById("restart-button").addEventListener("click", restartQuiz);
+
 function restartQuiz() {
   currentQuestion = 0;
   score = 0;
@@ -214,8 +218,8 @@ function restartQuiz() {
   // resetar respostas do usuário
   userAnswers = new Array(questions.length).fill(null);
 
-  questions = allQuestions();
-  shuffleAnswers(questions);
+  //cria novas questões:
+  questions = createQuestions();
 
   resultContainer.style.display = "none";
   document.getElementById("quiz-container").style.display = "block";
@@ -298,6 +302,7 @@ resultsButton.addEventListener("click", () => {
 });
 
 slideEl.classList.add("slide-active");
+
 
 loadQuestion();
 renderNavigator();
