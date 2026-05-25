@@ -208,11 +208,6 @@ section {
   background: var(--bg-default);
 }
 
-.card {
-  position: relative; /* For the absolute pos. link to stay inside */
-  padding: 20px;
-}
-
 .card-link::after {
   content: "";
   position: absolute;
@@ -235,6 +230,8 @@ section {
 }
 
 .card {
+  position: relative; /* For the absolute pos. link to stay inside */
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -243,16 +240,83 @@ section {
   background-color: gray;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   aspect-ratio: 1 / 1;
+  color: white;
 }
 
 .card p {
   opacity: 0;
 }
 
-.card:hover p,
-.card:hover h3 {
+.card:hover p {
   opacity: 1;
-  color: white;
+}
+
+#card-cultura {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0) 49%,
+      rgba(0, 0, 0, 0.5) 79%,
+
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    url("../assets/imgs/articles/cultura.jpg");
+  /* Photo by <a href="https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/photos/close-up-photo-of-color-pencil-yt5e_nZ7CZ8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+       */
+  background-size: cover;
+  background-position: center;
+}
+
+#card-trabalho {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0) 59%,
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    url("../assets/imgs/articles/trabalho.jpg");
+  /* Photo by <a href="https://unsplash.com/@mostafa_meraji?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">mostafa meraji</a> on <a href="https://unsplash.com/photos/group-of-person-walking-on-road-Snd6is4B17M?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+       */
+
+  background-size: cover;
+  background-position: center;
+}
+
+#card-consumo {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0) 59%,
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    url("../assets/imgs/articles/consumo.jpg");
+  /* Photo by <a href="https://unsplash.com/@mostafa_meraji?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">mostafa meraji</a> on <a href="https://unsplash.com/photos/group-of-person-walking-on-road-Snd6is4B17M?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+       */
+
+  background-size: cover;
+  background-position: center;
+}
+
+#card-informacao {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0) 59%,
+
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    url("../assets/imgs/articles/informacao.jpg");
+
+  /* 
+    Photo by <a href="https://unsplash.com/@nasa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">NASA</a> on <a href="https://unsplash.com/photos/photo-of-outer-space-Q1p7bh3SHj8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+    */
+
+  background-size: cover;
+  background-position: center;
 }
 
 #quiz-cta {
