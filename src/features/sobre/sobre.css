@@ -1,12 +1,31 @@
-*{
-    /*Zera margens*/
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  /*Zera margens*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-dl dt{
-    font-weight: bold;
+dl dt {
+  font-weight: bold;
+}
+
+.about-title {
+  padding: 1.5rem 0rem 1rem 5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .about-title {
+    padding: 1.5rem 0rem 1rem 1rem;
+  }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    min-height: 100vh;
+    padding: 2rem;
 }
 
 footer {
@@ -15,4 +34,27 @@ footer {
 
 .logo-utfpr {
   width: 10rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.imagem-contorno {
+  float: left; /* Obrigatório para o contorno funcionar */
+  width: 200px;
+  height: 200px;
+  margin-right: 20px; /* Distância do texto */
+  
+  /* Cria um círculo para o texto seguir */
+  shape-outside: circle(50%); 
+  
+  /* Recorta a imagem para o formato circular (opcional) */
+  clip-path: circle(50%); 
+}
+
+ul {
+    text-align: left;
+    padding-left: 1.5rem;
 }
