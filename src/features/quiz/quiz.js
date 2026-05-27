@@ -11,7 +11,7 @@ deverá ter um shuffle entre as perguntas na hora de ser enviada para o site*/
 const themes = {
   cinema,
   music,
-  cuisine
+  cuisine,
 };
 
 /*-------------------MONTAGEM DAS PERGUNTAS----------------------*/
@@ -44,12 +44,12 @@ function allQuestions() {
   let tempQuestionsArray = [];
   let numQuestions = 1;
   //Para cada tema ele irá realizar o método de sortPairs e retornar 4 perguntas de cada
-  Object.values(themes).forEach(element => {
+  Object.values(themes).forEach((element) => {
     // Para cada 'numQuestions" de perguntas retornadas ele irá dividir os pares de objetos em perguntas únicas e as enviará para o array allQuestionsArray, que as embaralhará.
     tempQuestionsArray = sortPairs(element, numQuestions);
-    tempQuestionsArray.forEach(pair => {
-      allQuestionsArray.push(pair.nacional);    
-      allQuestionsArray.push(pair.internacional);    
+    tempQuestionsArray.forEach((pair) => {
+      allQuestionsArray.push(pair.nacional);
+      allQuestionsArray.push(pair.internacional);
     });
     tempQuestionsArray = [];
     //allQuestionsArray.push
@@ -58,7 +58,8 @@ function allQuestions() {
   return allQuestionsArray;
 }
 
-function shuffleAnswers(questions) { //Perguntas já vem embaralhadas, só falta embaralhar as respostas
+function shuffleAnswers(questions) {
+  //Perguntas já vem embaralhadas, só falta embaralhar as respostas
   questions.forEach((q) => {
     /** guarda a resposta correta antes de embaralhar
         embaralha as respostas
@@ -85,8 +86,6 @@ let questions = createQuestions();
 
 //Nao pode ser const pois é reatribuido em restartquiz
 /*---------------------------------------------------------------*/
-
-
 
 function loadQuestion() {
   answersEl.innerHTML = "";
@@ -208,7 +207,9 @@ function showResult() {
 }
 
 // Listener em button restart para chamar a funcao restarquiz
-document.getElementById("restart-button").addEventListener("click", restartQuiz);
+document
+  .getElementById("restart-button")
+  .addEventListener("click", restartQuiz);
 
 function restartQuiz() {
   currentQuestion = 0;
@@ -302,18 +303,36 @@ resultsButton.addEventListener("click", () => {
 
 slideEl.classList.add("slide-active");
 
-
 loadQuestion();
 
 let canLeavePage = false;
+let modalOpened = false;
 
-history.pushState({ quiz: true }, "");
+// adiciona estado fake
+function pushQuizState() {
+  history.pushState({ quiz: true }, "");
+}
+
+pushQuizState();
 
 window.addEventListener("popstate", () => {
-  if (canLeavePage) return;
+  // se confirmou saída, deixa navegar
+  if (canLeavePage) {
+    return;
+  }
 
-  history.pushState({ quiz: true }, "");
-  showPopup();
+  // evita abrir várias modais
+  if (!modalOpened) {
+    modalOpened = true;
+    showPopup();
+  }
+
+  // recoloca estado fake
+  pushQuizState();
+});
+
+popup.addEventListener("close", () => {
+  modalOpened = false;
 });
 
 document.getElementById("confirm-exit").addEventListener("click", () => {
