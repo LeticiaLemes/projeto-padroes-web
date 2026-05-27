@@ -26,7 +26,7 @@ function shuffleArray(array) {
 }
 
 // Sorteia os pares de perguntas dentro de cada tema
-function sortPairs(arrayTheme, amount) {
+function pickRandomPairs(arrayTheme, amount) {
   //copia o array
   const copy = [...arrayTheme];
   //embaralha o array
@@ -43,10 +43,10 @@ function allQuestions() {
   let allQuestionsArray = [];
   let tempQuestionsArray = [];
   let numPairs = 1;
-  //Para cada tema ele irá realizar o método de sortPairs e retornar 4 perguntas de cada
+  //Para cada tema ele irá realizar o método de pickRandomPairs e retornar 4 perguntas de cada
   Object.values(themes).forEach((element) => {
     // Para cada 'numPairs" de perguntas retornadas ele irá dividir os pares de objetos em perguntas únicas e as enviará para o array allQuestionsArray, que as embaralhará.
-    tempQuestionsArray = sortPairs(element, numPairs);
+    tempQuestionsArray = pickRandomPairs(element, numPairs);
     tempQuestionsArray.forEach((pair) => {
       allQuestionsArray.push(pair.nacional);
       allQuestionsArray.push(pair.internacional);
