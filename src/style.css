@@ -174,7 +174,7 @@ h2 {
   color: #ffffff;
 }
 
-section {
+.vertical-section {
   position: relative; /* For the absolute pos. link to stay inside */
   min-height: 100vh;
   background: var(--bg-secondary);
@@ -342,7 +342,6 @@ section {
 }
 
 .back-button {
-  background-color: #333333;
   width: 3rem;
   height: 3rem;
   display: flex;
@@ -351,9 +350,8 @@ section {
   border-radius: 50%;
   transition: all 0.2s ease;
   margin: 1rem;
-  border-style: solid;
+  border: 2px solid #333333;
   background-color: transparent;
-  border-width: 2px;
   position: fixed;
   top: 8px;
   left: 8px;
