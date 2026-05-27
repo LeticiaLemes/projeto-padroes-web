@@ -115,7 +115,7 @@ section .content {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.2s ease;
 }
 
@@ -223,6 +223,7 @@ section .content {
 /* Navegação entre perguntas */
 .navigator {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
   justify-content: center;
   margin-bottom: 1rem;

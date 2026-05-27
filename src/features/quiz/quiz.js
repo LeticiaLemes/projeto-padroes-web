@@ -81,6 +81,7 @@ function createQuestions() {
 /*---------------------------------------------------------------*/
 
 /*---------------------CRIA AS PERGUNTAS-----------------------*/
+
 let questions = createQuestions();
 
 //Nao pode ser const pois é reatribuido em restartquiz
@@ -304,3 +305,13 @@ slideEl.classList.add("slide-active");
 
 
 loadQuestion();
+
+/*-----------------------------A FAZER--------------------------------------------------*/
+
+/*RESULTADO EM FORMA RADIAL - MOSTRANDO A PORCENTAGEM DE ACERTO DO USUÁRIO EM CADA TEMA NO ESPECTRO NACIONAL E NO INTERNCIONAL*/ 
+
+// Calcula a porcentagem de acerto por tema (cinema, música, culinária) separando nacional e internacional
+function calcThemeScore(questions, userAnswers) {}
+
+// Renderiza os gráficos radiais com os resultados calculados por calcThemeScore
+function renderRadialCharts(themeScores) {}
