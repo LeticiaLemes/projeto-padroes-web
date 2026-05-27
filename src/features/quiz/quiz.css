@@ -197,9 +197,9 @@ section .content {
 
 /* Botão confirmar */
 .btn-confirm {
-  background: var(--text);
-  color: var(--bg-default);
-  border: none;
+  background: transparent;
+  color: #333333;
+  border: 1px solid #333;
   padding: 10px 16px;
   border-radius: 6px;
 
@@ -209,15 +209,9 @@ section .content {
 }
 
 .btn-confirm:hover {
-  transform: translateY(-1px);
-  box-shadow:
-    0 7px 10px var(--bg-shadow),
-    0 4px 7px var(--bg-shadow);
-}
-
-.btn-confirm:active {
-  transform: translateY(0);
-  box-shadow: 0 6px 12px var(--bg-shadow);
+  transition: 0.2s ease;
+  background-color: #333333;
+  color: white;
 }
 
 /* Navegação entre perguntas */

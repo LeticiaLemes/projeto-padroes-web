@@ -307,18 +307,16 @@ loadQuestion();
 
 let canLeavePage = false;
 
-// Cria um estado fake no histórico
 history.pushState({ quiz: true }, "");
 
-// Detecta botão voltar do navegador/celular
-window.addEventListener("popstate", (event) => {
-  // Caso seja confirmado deixa voltar normalmente
-  if (canLeavePage) {
-    return;
-  }
+window.addEventListener("popstate", () => {
+  if (canLeavePage) return;
 
-  // Reinsere o estado para impedir saída imediata
   history.pushState({ quiz: true }, "");
-
   showPopup();
+});
+
+document.getElementById("confirm-exit").addEventListener("click", () => {
+  canLeavePage = true;
+  window.location.href = "../../index.html";
 });
