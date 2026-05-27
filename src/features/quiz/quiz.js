@@ -42,11 +42,11 @@ function allQuestions() {
   // Array final contendo todas as questões a serem enviadas para o quiz do usuário
   let allQuestionsArray = [];
   let tempQuestionsArray = [];
-  let numQuestions = 1;
+  let numPairs = 1;
   //Para cada tema ele irá realizar o método de sortPairs e retornar 4 perguntas de cada
   Object.values(themes).forEach((element) => {
-    // Para cada 'numQuestions" de perguntas retornadas ele irá dividir os pares de objetos em perguntas únicas e as enviará para o array allQuestionsArray, que as embaralhará.
-    tempQuestionsArray = sortPairs(element, numQuestions);
+    // Para cada 'numPairs" de perguntas retornadas ele irá dividir os pares de objetos em perguntas únicas e as enviará para o array allQuestionsArray, que as embaralhará.
+    tempQuestionsArray = sortPairs(element, numPairs);
     tempQuestionsArray.forEach((pair) => {
       allQuestionsArray.push(pair.nacional);
       allQuestionsArray.push(pair.internacional);
@@ -351,6 +351,8 @@ function calcThemeScore(questions, userAnswers) {}
 
 // Renderiza os gráficos radiais com os resultados calculados por calcThemeScore
 function renderRadialCharts(themeScores) {}
+
+
 
 
 
